@@ -1,7 +1,7 @@
 //Mae-Jeanne Preville
 //10/08/19
 //Data Structures: Dr. Griffin
-//Program # 2
+//Homework/Program # 2
 /*Description: This program resizes the array if the stack gets 80% full,
 1.5 times larger than the previous size, and it reduces the array 
 by half (0.5) when the size goes down to 20%.
