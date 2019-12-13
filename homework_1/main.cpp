@@ -1,6 +1,6 @@
 //Mae-Jeanne Preville
 //Data Structures - Dr. Griffin
-//Program # 1
+//Homework # 1
 //Date: 09/03/19
 /*Two functions loadClassList that opens the file and reads the data.
 printClassList which will print out the results in a nicely formatted manner.
