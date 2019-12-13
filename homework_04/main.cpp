@@ -1,6 +1,6 @@
 /*Mae-Jeanne Preville
  Date: Oct 15th 2019
- Homework #3 - Dr. Griffin
+ Homework #4 - Dr. Griffin
  Description: List based Queue that holds an animal
  */
 
