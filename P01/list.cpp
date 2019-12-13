@@ -10,24 +10,7 @@
 
 using namespace std;
 
-int menu()
-{
-	int choice = 0;
-
-	while (choice < 1 || choice > 3)
-	{
-		cout << "\nMenu of Operations:\n";
-		cout << "    1 - Find Employee\n";
-		cout << "    2 - Delete Employee\n";
-		cout << "    3 - Quit\n";
-		cout << "Choice: ";
-		cin >> choice;
-	}
-	return choice;
-}
-
-
-bool substringMatch(string macro, string micro)
+bool stringMatch(string macro, string micro)
 {
 	return macro.find(micro) >= 0;
 }
@@ -55,32 +38,6 @@ struct Employee
 		return;
 	}
 	
-	Employee(string id, string first, string last, string sex, string mail, double pay) {
-		emp_id = id;
-		first_name = first;
-		last_name = last;		
-		gender = sex;
-		email = mail;
-		hourly_pay = pay;
-	}
-
-	void print()
-	{
-		/*Employee* Temp = Head;
-
-		while (Temp != NULL)
-		{*/
-			cout << emp_id << ", " << first_name << ", "
-				<< last_name << ", " << gender << ", "
-				<< email << ", " << hourly_pay;
-			
-			/*if (Temp->Next) {
-				cout << "->";
-			}
-			
-			Temp = Temp->Next;
-		}*/
-	}
 };
 
 
@@ -138,24 +95,24 @@ class LinkedList
 
 		}		
 
-
-		/*bool find(string pokemon_name)
+	
+		void print()
 		{
-			Node *temp = head;
-			while (temp != NULL)
-			{
-				//if (temp->poke.name == pokemon_name)
-				if (string_match(lower_string(temp->poke.name), lower_string(pokemon_name)))
-				{
-					return true;
+			/*Employee* Temp = Head;
+
+			while (Temp != NULL)
+			{*/
+				cout << emp_id << ", " << first_name << ", "
+					<< last_name << ", " << gender << ", "
+					<< email << ", " << hourly_pay;
+
+				/*if (Temp->Next) {
+					cout << "->";
 				}
-				else
-				{
-					temp = temp->next;
-				}
-			}
-			return false;
-		}*/
+
+				Temp = Temp->Next;
+			}*/
+		}
 
 
 
@@ -169,23 +126,10 @@ int main()
 {
 	LinkedList EmployeeDescriptList;
 
-	/*string empid;
-	string first;
-	string last;
-	string email;
-	string gender;
-	double pay;
-
-	string line;
-	string *tokens;*/
 	ifstream fin;
 	fin.open("employees.dat");
-
-	int choice = 0;
-
-	while (choice != 3) {
-		choice = menu();
-	}
+	ofstream outfile;
+	outfile.open("maeOutput.txt");
 
 	while (!fin.eof())
 	{
@@ -198,9 +142,14 @@ int main()
 		EmployeeDescriptList.push(personalInfo);
 	}
 
-	cout << EmployeeDescriptList.find("salon") << endl;
+	outfile << "Mae-Jeanne Preville" << endl << endl;
+	outfile << "Was word found? (1 = yes, 0 = no)" << endl;
+	outfile << "Answer = " << EmployeeDescriptList.find("salon") << endl;
+	
+	//Displays information in
+	EmployeeDescriptList.print(outfile);
 
-
-	system("pause");
+	outfile.close();
+	//system("pause");
 	return 0;
 }
